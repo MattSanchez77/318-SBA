@@ -21,6 +21,12 @@ app.use('/authors', authorsRoutes);
 app.use('/genres', genresRoutes);
 
 
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.json({ error: err.message });
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server Connected on Port: ${PORT}`);
   });
