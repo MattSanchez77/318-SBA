@@ -4,10 +4,13 @@ import express from 'express'
 const app = express()
 const PORT = 3000 || 3001
 
+// Middleware
 app.use(express.json())
 app.get('/', (req, res) => {
   res.redirect('/books');
 });
+
+
 
 
 
