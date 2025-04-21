@@ -11,14 +11,11 @@ app.get('/', (req, res) => {
 });
 
 
-Routes
+// Routes
 app.get('/', (req, res) => {
   res.redirect('/books');
 });
 
-app.use('/books', booksRoutes);
-app.use('/authors', authorsRoutes);
-app.use('/genres', genresRoutes);
 
 
 app.use((err, req, res, next) => {
